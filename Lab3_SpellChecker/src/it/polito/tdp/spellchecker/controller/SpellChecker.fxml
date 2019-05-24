@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+   <top>
+      <Label text="Lab-03" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Choose the language">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="boxLanguages" onAction="#doSelectLanguage" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtGiven" />
+            <Button fx:id="btnSpellCheck" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check">
+               <VBox.margin>
+                  <Insets left="400.0" />
+               </VBox.margin>
+            </Button>
+            <HBox>
+               <children>
+                  <Label text="Wrong Words" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtErrors" editable="false" />
+            <HBox>
+               <children>
+                  <Label fx:id="txtErrorsNumbers" text="Errors" textFill="RED">
+                     <HBox.margin>
+                        <Insets left="350.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="btnClearText" mnemonicParsing="false" onAction="#doClearText" text="Clear Text">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="txtTime" text="Time" />
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
